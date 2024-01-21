@@ -1,17 +1,9 @@
-# user_input = input().replace(" ", "")
-#
-# if len(user_input) == 4 and user_input.isdigit():
-#     for i in user_input:
-#         print(i, end="\n")
+user_input = int(input("~Please, input a number (4 digits only): "))
 
-NUMBER_OF_DIGITS = 4
+thousands, remainder = divmod(user_input, 1000)
+hundreds, remainder = divmod(remainder, 100)
+tens, ones = divmod(remainder, 10)
 
-user_input = input().replace(" ", "")
+print(f"{thousands}\n{hundreds}\n{tens}\n{ones}")
 
-if user_input.isdigit():
-    quotient, remainder = divmod(len(user_input), NUMBER_OF_DIGITS)
-
-    if quotient == 1 and remainder == 0:
-        for i in user_input:
-            print(i, end="\n")
 
