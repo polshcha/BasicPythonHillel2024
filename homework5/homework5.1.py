@@ -2,14 +2,12 @@ import keyword
 
 
 def if_variable_ok(var):
-    kwlist = keyword.kwlist  # ключові слова
     punc = "!\"#$%&'()*+,-./:;<=>?@[\\]^`{|}~"  # змінена пунктуація не включаємо _ та робимо єкранування
 
-    if var not in kwlist:
-        is_keyword = False
-    else:
+    if keyword.iskeyword(var):
         is_keyword = True
-
+    else:
+        is_keyword = False
     is_punc = False
 # двійний цикл перевіряємо кожний символ var чи є він пунктуацією, без цього шукає тільк. на початку (?):
     for i in range(len(var)):
