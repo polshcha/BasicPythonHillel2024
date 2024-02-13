@@ -1,15 +1,9 @@
 def correct_sentence(text):
-    if (text == "greetings, friends"
-            or text == "Greetings, friends."
-            or text == "greetings, friends."):
-        my_msg = "Greetings, friends."
-    elif text == "Greetings. Friends":
-        my_msg = "Greetings. Friends."
-    elif text == "hello":
-        my_msg = "Hello."
-    else:
-        my_msg = None
-    return my_msg
+    if text[0].islower():
+        text = text[0].upper() + text[1:]
+    if text[-1] != ".":
+        text = text + "."
+    return text
 
 
 assert correct_sentence("greetings, friends") == "Greetings, friends.", 'Test1'
