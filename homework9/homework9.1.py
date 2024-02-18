@@ -2,7 +2,7 @@ def popular_words(text: str, words: list) -> dict:
     text = text.strip()
     """ This function returns a dictionary that shows words and their popularity in a string """
     # Створили за доп. dict comprehencion dict з key (слова в даному рядку) та value (0, початкова кільк. шуканих слів).
-    popularity_dict = {k.lower(): v for (k, v) in zip(text.split(), [0 for element in range(len(text.split()))])}
+    popularity_dict = {k.lower(): v for (k, v) in zip(text.split(), [0 for elem in range(len(text.split()))])}
     # Додаємо у створений dict слова з шуканих, якщо їх немає у ньому.
     for s_w in range(len(words)):
         if words[s_w].lower() not in popularity_dict:
